@@ -1,0 +1,186 @@
+{
+	"Info": "Values are chosen based on past experiments of respective (and/or similar) papers",
+
+
+	"FairDummies": {
+		"default": {
+			"learning_rate": 0.01,
+			"mu": 0.8,
+			"second_scale": 1
+		},
+		"tuning": {
+			"learning_rate": [0.1, 0.01, 0.001],
+			"mu": [0.5, 0.6, 0.7, 0.8, 0.9, 0.98],
+			"second_scale": [1, 10]
+		}
+	},
+
+
+	"HGR": {
+		"default": {
+			"learning_rate": 0.001,
+			"mu": 0.7
+		},
+		"tuning": {
+			"learning_rate": [0.0001, 0.001, 0.01],
+			"mu": [0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 0.98]
+		}
+	},
+
+
+	"AdversarialDebiasing": {
+		"default": {
+			"learning_rate": 0.001,
+			"mu": 0.7,
+			"epochs": 200
+		},
+		"tuning": {
+			"learning_rate": [0.0001, 0.001, 0.01],
+			"mu": [0.2, 0.3, 0.5, 0.7, 0.9, 0.95],
+			"epochs": [50, 100, 200, 400]
+		}
+	},
+
+
+	"FairGeneralizedLinearModel": {
+		"default": {
+			"lam": 0.01,
+			"discretization": "equal_count"
+		},
+		"tuning": {
+			"lam": [0, 0.001, 0.01, 0.1, 0.2, 0.35, 0.5, 0.75, 1, 2, 5, 8, 10],
+			"discretization": ["equal_count", "equal_length"]
+		}
+	},
+
+
+	"ReductionsApproach": {
+		"default": {
+			"c": 0.5
+		},
+		"tuning": {
+			"c": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+		}
+	},
+
+
+	"ConvexFrameworkModel": {
+		"default": {
+			"lam": 1e-3,
+			"penalty": "group"
+		},
+		"tuning": {
+			"lam": [0, 0.001, 0.01, 0.1, 0.2, 0.35, 0.5, 0.75, 1, 2, 5, 8, 10],
+			"penalty": ["group", "individual"]
+		}
+	},
+
+
+	"HSICLinearRegression": {
+		"default": {
+			"lam": 0.1
+		},
+		"tuning": {
+			"lam": [0, 0.0001, 0.001, 0.005, 0.01, 0.05, 0.1, 0.2, 0.35, 0.5, 0.75, 1]
+		}
+	},
+
+
+	"GeneralFairERM": {
+		"default": {
+			"eps": 50
+		},
+		"tuning": {
+			"eps": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 150, 200]
+		}
+	},
+
+
+	"Wass2Geo": {
+		"default": {
+			"t": 1,
+			"bins": "best"
+		},
+		"tuning": {
+			"t": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+			"bins": ["best", 10, 50, 100, 200]
+		}
+	},
+
+	
+	"FairHeckman": {
+		"default": {
+			"epochs": 100,
+			"lr": 0.1
+		},
+		"tuning": {
+			"epochs": [50, 100, 200],
+			"lr": [0.001, 0.01, 0.05, 0.1, 0.2]
+		}
+	},
+
+
+	"FairWassBary": {
+		"default": {
+
+		},
+		"tuning": {
+
+		}
+	},
+
+
+	"FairPlugRecal": {
+		"default": {
+			"beta": 0.1
+		},
+		"tuning": {
+			"beta": [0.001, 0.01, 0.1]
+		}
+	},
+
+
+	"UnawareFairReg": {
+		"default": {
+			"base": "SGD3",
+			"L": "auto",
+			"eps": 8
+		},
+		"tuning": {
+			"base": ["SGD3", "SGD", "ACSA", "ACSA2"],
+			"L": ["best", "auto"],
+			"eps": [1, 2, 4, 8, 16]
+		}
+	},
+
+
+	"PrivateHDEFairPostProcessor": {
+		"default": {
+			"alpha": 0.1,
+			"bins": "best",
+			"eps": 5
+		},
+		"tuning": {
+			"alpha": [0, 0.005, 0.01, 0.05, 0.1, 0.2, 0.3, 0.5, 1],
+			"bins": ["auto", "best"],
+			"eps": [0.1, 0.5, 1, 5, 10, "inf"]
+		}
+	},
+
+
+	"FairRegBoost": {
+		"default": {
+			"preparation_nr": 0,
+			"uc_strategy": "mid_uc",
+			"lam": "best",
+			"gamma": "best"
+		},
+		"tuning": {
+			"preparation_nr": ["auto"],
+			"uc_strategy": ["mid_uc", "high_uc", "low_uc"],
+			"lam": ["best", 0.001, 0.01, 0.1, 0.5, 1],
+			"gamma": ["best", 0.001, 0.01, 0.1, 0.5, 1, 2, 4]
+		}
+	}
+
+}
